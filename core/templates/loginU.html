@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-te">
+  <header>
+    <div class="transparent-layout">
+      <h2 class="logo-container animated fadeInDown"><span style="color:wheat" class="icon-iaveg first-logo"></span></h2>
+    </div>
+  </header>
+  <div class="form-container">
+    <div class="form-layout">
+      <form id="mytest" method="POST">
+		{% csrf_token %}
+        <div class="form-set">
+          <label for="name">Usuario</label>
+          <input id="name" name="inputusername" size="30" type="text" required>
+          <div class="form-validate-input"></div>
+        </div>
+        <div class="form-set">
+          <label for="pass" style="margin-right:8px">Contraseña </label>
+          <input id="pass" type="password" name="inputpassword" required>
+          <div class="form-validate-input"></div>
+        </div>
+        <div class="form-panel">
+          <button type="submit" class="btn-success">verificar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

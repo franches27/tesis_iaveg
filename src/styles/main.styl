@@ -1,0 +1,174 @@
+@import 'animations/slidershow.styl'
+@import 'components/header.styl'
+@import 'animate.css/animate.css'
+@import 'components/materialcolor.styl'
+@import 'styles/style.css'
+
+body_color = #fff
+body_selection = peterriver
+body_background = silv
+h3_color = #ecf0f1
+
+input
+  border none
+  border-bottom 1px solid peterriver
+  background-color rgba(clouds, 0.2)
+  margin-bottom 10px
+  width 98% !important
+  &:focus
+    border none
+    border-bottom 2px solid peterriver
+    box-shadow: none   
+    outline: none !important
+  &.danger:focus
+    border none
+    border-bottom 2px solid carrot
+    box-shadow: none   
+    outline: none !important
+textarea
+  width 100% !important
+  border 1px solid peterriver
+  background-color rgba(white, 0.2)
+  &.danger
+    border 1px solid carrot
+    &:focus
+      box-shadow: 0 0 10px carrot
+      border 1px solid carrot
+      outline: none !important
+.container-test
+  position relative
+.form
+  &-container
+    position absolute
+    top 150px
+    width 100%
+  &-layout
+    width 30%
+    background-color rgba(clouds , 0.8)
+    padding: 30px
+    border-radius 30px
+    margin auto
+    position relative
+  &-set
+    position relative
+    color midnightblu
+  &-validate
+    &-icon
+      position absolute
+      right 5px
+      top 20%
+      color carrot
+      &.validity
+        color alizarin
+    &-input
+      position absolute
+      width 0
+      margin-left 0
+      height 1px
+      background-color carrot
+      transition 1s
+      left 0
+      bottom 10px
+      &.danger
+        width 98%
+    &-message
+      position absolute
+      left 100%
+      top 10px
+      font-size 15px
+      border-radius 10px
+      color clouds
+      background-color rgba(carrot,0.6)
+      width 50%
+  &-panel
+    position relative
+    height 40px
+    width 100%
+.btn-success
+  background-color rgba(peterriver , 0.8)
+  border none
+  border-right 4px solid peterriver 
+  border-bottom 4px solid peterriver
+  border-radius 3px
+  color clouds
+  position absolute
+  right 0
+  bottom 0
+  height 30px
+  &:focus
+    border-right 4px solid belizehole 
+    border-bottom 4px solid belizehole 
+    background-color rgba(belizehole , 0.8)
+     
+  &:active
+    border-right 1px solid belizehole 
+    border-bottom 1px solid belizehole 
+    
+header
+  head(100%,rgba(white, 0.9),rgba(red, 0.2),10px,1em,absolute,100%)
+  background url('../img/viviendas.jpg') no-repeat
+  background-position center
+  text-align center
+  animation moveslider 5s  infinite
+  
+.logo-container
+  animation-duration: 5s
+.first-logo
+  font-size 3em
+.transparent-layout
+  position absolute
+  height 100%
+  width 100%
+  top 0 
+  left 0
+  background-color rgba(alizarin, 0.4)
+body
+  font-family: helvetica, arial, sans-serif
+  font-size: 18px
+  color body_color
+  background-color: body_background
+  margin 0
+  padding 0
+::selection
+   background-color: body_selection
+   color: body_color
+
+h1
+  font-size: 72px
+  line-height: 82px
+  letter-spacing: -2px
+  margin-bottom: 16px
+
+h2
+  font-size: 42px
+  letter-spacing: -1px
+  margin-bottom: 8px
+
+h3
+  font-size: 24px
+  font-weight: normal
+  margin-borrrrrrrrrrrrttom: 24px
+  color: h3_color
+
+hr
+  visibility: hidden
+  height: 20px
+
+ul
+  list-style: none
+
+li
+  margin-bottom: 12px
+
+p
+  margin: 0 100px 12px
+  line-height: 22px
+
+a
+  color: a_color
+  text-decoration: none
+
+main
+  width: 50%
+  margin: auto
+  padding-left: 75px

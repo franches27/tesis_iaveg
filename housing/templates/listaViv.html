@@ -1,0 +1,47 @@
+{% extends "base.html"%}
+{% load staticfiles %}
+{% block title %} lista de viviendas{% endblock %}
+{% block content %}
+	<div class="container center">
+		<h1>
+		listado de viviendas
+		</h1>
+		<hr>
+		<div class="row">
+			<table class="table table-hover table-bordered " style="width:100%">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nombre del proyecto</th>
+						<th>Decripcion</th>
+						<th>N° Viviendas</th>
+						<th>Contrtista</th>
+						<th>Municipio</th>
+						<th>Opciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						{% for i in viviendas %}
+							<th scope="row">{{i.id}}</th>
+							<td value="{{i.id}}">{{i.name}}</td>
+							<td value="{{i.id}}">{{i.description}}</td>
+							<td value="{{i.id}}">{{i.housing}}</td>
+							<td value="{{i.id}}">{{i.engineer.name}} {{i.engineer.lastname}} C.I.V: {{i.engineer.civ}} C.I: {{i.engineer.ci}}</td>
+							<td value="{{i.id}}">{{i.parish.municipality}}</td>
+							<td class="btn-group col-md-2">
+								
+								<a  class="btn btn-danger"><i class="fa fa-trash"></i></a>
+								<a  class="btn btn-success" href="{% url 'HousingU' i.slug%}"><i class="fa fa-pencil"></i></a>
+								<a  class="btn btn-info"><i class="fa fa-check"></i></a>
+								
+							</td>
+						{% endfor %}
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	{% endblock %}
+	{% block js %}
+		<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	{% endblock %}

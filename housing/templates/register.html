@@ -1,0 +1,92 @@
+{% extends "base.html"%}
+{% load staticfiles %}
+{% block title %} Registro de proyecto {% endblock %}
+{% block content %}
+	<div class="container center">
+		<h1>
+		Registro de proyecto
+		</h1>
+		<hr>
+		<div class="row">
+			<form role="form" method="POST">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="InputName">N° id</label>
+					<div class="input-group">
+						<input type="number" class="form-control" min="1" max="99999999" name="ido" id="InputName" placeholder="Numero de viviendas" required>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputName">Nombre del proyecto</label>
+					<div class="input-group">
+						<input type="text" class="form-control" name="name" id="InputName" placeholder="Nombre del proyecto" required>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputName">Municipio</label>
+					<div class="input-group">
+						<select class="form-control" id="municipio"placeholder="Nombre del proyecto"  name="municipio">
+							<option> </option>
+							{% for x in municipio %}
+								<option value="{{x.id}}" >{{x.name}} </option>
+							{% endfor %}
+						</select>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputName">Parroquia</label>
+					<div class="input-group">
+						<select class="form-control" id="parroquia" name="parroquia">
+							<option> </option>
+						</select>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputName">N° viviendas </label>
+					<div class="input-group">
+						<input type="number" class="form-control" min="1" max="99999999" name="nviviendas" id="InputName" placeholder="Numero de viviendas" required>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputName">ingeniero</label>
+					<div class="input-group">
+						<select class="form-control" id="municipio" name="ingeniero">
+							<option> </option>
+							{% for i in ingeniero %}
+								<option value="{{i.id}}" >{{i.name}} - {{i.ci}}</option>
+							{% endfor %}
+						</select>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="InputMessage">Descripcion del proyecto</label>
+					<div class="input-group">
+						<textarea name="descripcion" id="InputMessage" class="form-control" rows="5" required></textarea>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+				</div>
+				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+			</div>
+		</form>
+		{% if is_post %}
+			<div class="col-lg-5 col-md-push-1">
+				<div class="col-md-12">
+					<div class="alert alert-{{calse}}">
+						<strong><span class="glyphicon glyphicon-ok"></span> {{message}}</strong>
+					</div>
+					
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<form class="form-horizontal" method="POST">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Registrarse</legend>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Nombre de usuario</label>
+				<div class="col-lg-10">
+					<input name="inputusername" class="form-control" id="inputuserame" placeholder="name" type="text">
+				</div>
+			</div>		
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
+				<div class="col-lg-10">
+					<input name="inputname" class="form-control" id="inputname" placeholder="name" type="text">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Apellido</label>
+				<div class="col-lg-10">
+					<input name="inpulastname" class="form-control" id="inpulastname" placeholder="apellido" type="text">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+				<div class="col-lg-10">
+					<input name="inputEmail" class="form-control" id="inputEmail" placeholder="Email" type="email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Contraseña</label>
+				<div class="col-lg-10">
+					<input name="inputpassword" class="form-control" id="inputpasword" placeholder="contrseña" type="password">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 control-label">Confirmar contraseña</label>
+				<div class="col-lg-10">
+					<input class="form-control" id="inputpassword" placeholder="repetir contrseña" type="password">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-10 col-lg-offset-2">
+					<button type="reset" class="btn btn-default">Cancel</button>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+{% endblock %}
